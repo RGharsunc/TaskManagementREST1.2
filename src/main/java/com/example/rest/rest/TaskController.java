@@ -16,6 +16,11 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
+    @GetMapping(value = "/tasks")
+    public ResponseEntity getTasks(){
+        return ResponseEntity.ok(taskService.getAllTasks());
+    }
+
     @PutMapping(value = "/task/add")
     public ResponseEntity addTask(@ModelAttribute Task task) {
         taskService.addTask(task);

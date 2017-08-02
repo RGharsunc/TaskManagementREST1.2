@@ -26,6 +26,9 @@ public class TaskService {
         List<Task> tasks = taskRepository.findAll();
         return tasks;
     }
+    public List<Task> getTasks(){
+        return  taskRepository.findAll();
+    }
 
     public Task getTaskById(long id){
         Task task = taskRepository.findOne(id);
