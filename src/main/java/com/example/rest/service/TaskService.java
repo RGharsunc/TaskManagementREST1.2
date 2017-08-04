@@ -44,8 +44,7 @@ public class TaskService {
         taskRepository.save(task);
     }
 
-    public List<Task> getAllTasksByUserId(long id){
-        List<Task> tasks = taskRepository.findAllByUserByUserId(userService.getUserById(id));
-        return tasks;
-    }
+   public List<Task> getTasksByUser(long id){
+        return taskRepository.findAllByUserByUserId(userService.getUserById(id));
+   }
 }

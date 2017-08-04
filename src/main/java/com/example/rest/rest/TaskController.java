@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Created by Vardan on 02.08.2017.
  */
-@Controller
+@RestController
 public class TaskController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class TaskController {
         return ResponseEntity.ok(taskService.getAllTasks());
     }
 
-    @PutMapping(value = "/task/add")
+    @PostMapping(value = "/task/add")
     public ResponseEntity addTask(@ModelAttribute Task task) {
         taskService.addTask(task);
         return ResponseEntity.ok("added");
@@ -61,7 +61,7 @@ public class TaskController {
 
     @GetMapping(value = "/tasks/{userId}")
     public ResponseEntity getTasksByUser(@PathVariable long id){
-       return ResponseEntity.ok(taskService.getAllTasksByUserId(id));
+       return ResponseEntity.ok(taskService.getTasksByUser(id));
     }
 
 

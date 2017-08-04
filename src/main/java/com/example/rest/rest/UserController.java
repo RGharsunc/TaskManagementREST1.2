@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Vardan on 02.08.2017.
  */
-@Controller
+@RestController
 public class UserController {
     @Autowired
     UserService userService;
@@ -43,7 +43,7 @@ public class UserController {
         }
     }
 
-    @PatchMapping(value = "/user/update/{id}")
+    @PutMapping(value = "/user/update/{id}")
     public ResponseEntity updateUserById(@ModelAttribute User user, @PathVariable long id) {
         if (id <= 0) {
             return ResponseEntity.badRequest().build();
