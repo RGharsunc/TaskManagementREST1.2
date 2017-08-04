@@ -8,10 +8,11 @@ import java.io.Serializable;
  * Created by Vardan on 02.08.2017.
  */
 @Entity
-@Table(name = "user", schema = "rest_example",catalog = "")
+@Table(name = "user")
 public class User implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private  String name;
     private  String surname;
