@@ -11,13 +11,14 @@ import java.io.Serializable;
 @Table(name = "user")
 public class User implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
     private  String name;
     private  String surname;
     private  int age;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
